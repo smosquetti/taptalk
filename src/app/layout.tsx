@@ -10,7 +10,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "TapTalk — AAC English vocabulary",
+  title: "TapTalk - Vocabulary Board",
   description:
     "An Augmentative and Alternative Communication (AAC) board: tap a picture to see and hear the English word.",
 };

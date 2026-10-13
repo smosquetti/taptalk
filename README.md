@@ -1,6 +1,6 @@
-# TapTalk — AAC English Vocabulary Board
+# TapTalk - Vocabulary Board
 
-TapTalk is an English language learning web application built on
+TapTalk is a language learning web application built on
 Augmentative and Alternative Communication (AAC) principles: tap a
 picture, and the app shows the word as text and speaks it aloud with
 browser text-to-speech. This reduces verbal pressure while building

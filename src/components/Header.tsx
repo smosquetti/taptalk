@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSound } from "@/components/SoundContext";
+import Image from 'next/image'
 
 const NAV = [
   { href: "/", label: "Board" },
@@ -20,7 +21,13 @@ export default function Header() {
           href="/"
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-[#35302A]"
         >
-          <span aria-hidden>🗨️</span>
+          <div aria-hidden>
+            <Image 
+              src="/taptalk128.png"
+              alt="Logo"
+              width={32}
+              height={32}/>
+          </div>
           TapTalk
         </Link>
 

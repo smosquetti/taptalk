@@ -1,3 +1,5 @@
+export type Language = "en" | "de";
+
 export type CategoryId =
   | "colors"
   | "shapes"
@@ -22,31 +24,57 @@ export type CategoryInfo = {
   emoji: string;
 };
 
-export const CATEGORIES: CategoryInfo[] = [
-  { id: "colors", label: "Colors", emoji: "🎨" },
-  { id: "shapes", label: "Shapes", emoji: "⭐" },
-  { id: "numbers", label: "Numbers", emoji: "🔢" },
-  { id: "animals", label: "Animals", emoji: "🐶" },
-  { id: "food", label: "Food", emoji: "🍎" },
-  { id: "body", label: "My Body", emoji: "🖐️" },
-  { id: "emotions", label: "Feelings", emoji: "😊" },
-  { id: "home", label: "Home", emoji: "🏠" },
+export const LANGUAGES: { id: Language; label: string; flag: string }[] = [
+  { id: "en", label: "English", flag: "🇬🇧" },
+  { id: "de", label: "Deutsch", flag: "🇩🇪" },
 ];
 
-let cache: WordCard[] | null = null;
+const CATEGORIES: Record<Language, CategoryInfo[]> = {
+  en: [
+    { id: "colors", label: "Colors", emoji: "🎨" },
+    { id: "shapes", label: "Shapes", emoji: "⭐" },
+    { id: "numbers", label: "Numbers", emoji: "🔢" },
+    { id: "animals", label: "Animals", emoji: "🐶" },
+    { id: "food", label: "Food", emoji: "🍎" },
+    { id: "body", label: "My Body", emoji: "🖐️" },
+    { id: "emotions", label: "Feelings", emoji: "😊" },
+    { id: "home", label: "Home", emoji: "🏠" },
+  ],
+  de: [
+    { id: "colors", label: "Farben", emoji: "🎨" },
+    { id: "shapes", label: "Formen", emoji: "⭐" },
+    { id: "numbers", label: "Zahlen", emoji: "🔢" },
+    { id: "animals", label: "Tiere", emoji: "🐶" },
+    { id: "food", label: "Essen", emoji: "🍎" },
+    { id: "body", label: "Mein Körper", emoji: "🖐️" },
+    { id: "emotions", label: "Gefühle", emoji: "😊" },
+    { id: "home", label: "Zuhause", emoji: "🏠" },
+  ],
+};
+
+export function getCategories(lang: Language): CategoryInfo[] {
+  return CATEGORIES[lang];
+}
+
+const cache = new Map<Language, WordCard[]>();
 
 /**
- * Loads the vocabulary list from public/vocabulary.json.
+ * Loads the vocabulary list for a language from public/vocabulary-<lang>.json.
  * Kept client-side on purpose: the JSON stays editable without rebuilding.
  */
-export async function loadVocabulary(): Promise<WordCard[]> {
-  if (cache) return cache;
-  const res = await fetch("/vocabulary.json");
+export async function loadVocabulary(
+  lang: Language = "en",
+): Promise<WordCard[]> {
+  const hit = cache.get(lang);
+  if (hit) return hit;
+  const res = await fetch(`/vocabulary-${lang}.json`);
   if (!res.ok) {
-    throw new Error(`Could not load vocabulary.json (HTTP ${res.status})`);
+    throw new Error(
+      `Could not load vocabulary-${lang}.json (HTTP ${res.status})`,
+    );
   }
   const data = (await res.json()) as WordCard[];
-  cache = data;
+  cache.set(lang, data);
   return data;
 }
 

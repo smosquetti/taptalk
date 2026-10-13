@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { SoundProvider } from "@/components/SoundContext";
+import { LanguageProvider } from "@/components/LanguageContext";
 import Header from "@/components/Header";
 
 const geist = Geist({
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-[#FDF8EF] text-[#35302A]">
         <SoundProvider>
+          <LanguageProvider>
           <Header />
           <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">
             {children}
@@ -27,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <footer className="pb-6 text-center text-sm text-[#8a7f6f]">
             Tap a picture to hear its word · Built on AAC principles
           </footer>
+          </LanguageProvider>
         </SoundProvider>
       </body>
     </html>

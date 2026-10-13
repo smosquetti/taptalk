@@ -1,0 +1,338 @@
+[
+  {
+    "id": "colors-red",
+    "category": "colors",
+    "word": "Rot",
+    "description": "Ein roter Kreis",
+    "image": "/images/colors/red.svg"
+  },
+  {
+    "id": "colors-blue",
+    "category": "colors",
+    "word": "Blau",
+    "description": "Ein blauer Kreis",
+    "image": "/images/colors/blue.svg"
+  },
+  {
+    "id": "colors-yellow",
+    "category": "colors",
+    "word": "Gelb",
+    "description": "Ein gelber Kreis",
+    "image": "/images/colors/yellow.svg"
+  },
+  {
+    "id": "colors-green",
+    "category": "colors",
+    "word": "Grün",
+    "description": "Ein grüner Kreis",
+    "image": "/images/colors/green.svg"
+  },
+  {
+    "id": "colors-orange",
+    "category": "colors",
+    "word": "Orange",
+    "description": "Ein oranger Kreis",
+    "image": "/images/colors/orange.svg"
+  },
+  {
+    "id": "colors-purple",
+    "category": "colors",
+    "word": "Lila",
+    "description": "Ein lila Kreis",
+    "image": "/images/colors/purple.svg"
+  },
+  {
+    "id": "shapes-circle",
+    "category": "shapes",
+    "word": "Kreis",
+    "description": "Eine runde Form",
+    "image": "/images/shapes/circle.svg"
+  },
+  {
+    "id": "shapes-square",
+    "category": "shapes",
+    "word": "Quadrat",
+    "description": "Eine Form mit vier gleichen Seiten",
+    "image": "/images/shapes/square.svg"
+  },
+  {
+    "id": "shapes-triangle",
+    "category": "shapes",
+    "word": "Dreieck",
+    "description": "Eine Form mit drei Seiten",
+    "image": "/images/shapes/triangle.svg"
+  },
+  {
+    "id": "shapes-star",
+    "category": "shapes",
+    "word": "Stern",
+    "description": "Eine Form mit fünf Spitzen",
+    "image": "/images/shapes/star.svg"
+  },
+  {
+    "id": "shapes-heart",
+    "category": "shapes",
+    "word": "Herz",
+    "description": "Die Form der Liebe",
+    "image": "/images/shapes/heart.svg"
+  },
+  {
+    "id": "shapes-diamond",
+    "category": "shapes",
+    "word": "Raute",
+    "description": "Eine Form wie ein schiefes Quadrat",
+    "image": "/images/shapes/diamond.svg"
+  },
+  {
+    "id": "numbers-one",
+    "category": "numbers",
+    "word": "Eins",
+    "description": "Die Zahl 1",
+    "image": "/images/numbers/one.svg"
+  },
+  {
+    "id": "numbers-two",
+    "category": "numbers",
+    "word": "Zwei",
+    "description": "Die Zahl 2",
+    "image": "/images/numbers/two.svg"
+  },
+  {
+    "id": "numbers-three",
+    "category": "numbers",
+    "word": "Drei",
+    "description": "Die Zahl 3",
+    "image": "/images/numbers/three.svg"
+  },
+  {
+    "id": "numbers-four",
+    "category": "numbers",
+    "word": "Vier",
+    "description": "Die Zahl 4",
+    "image": "/images/numbers/four.svg"
+  },
+  {
+    "id": "numbers-five",
+    "category": "numbers",
+    "word": "Fünf",
+    "description": "Die Zahl 5",
+    "image": "/images/numbers/five.svg"
+  },
+  {
+    "id": "numbers-six",
+    "category": "numbers",
+    "word": "Sechs",
+    "description": "Die Zahl 6",
+    "image": "/images/numbers/six.svg"
+  },
+  {
+    "id": "animals-dog",
+    "category": "animals",
+    "word": "Hund",
+    "description": "Ein Hund sagt: Wuff!",
+    "image": "/images/animals/dog.svg"
+  },
+  {
+    "id": "animals-cat",
+    "category": "animals",
+    "word": "Katze",
+    "description": "Eine Katze sagt: Miau!",
+    "image": "/images/animals/cat.svg"
+  },
+  {
+    "id": "animals-fish",
+    "category": "animals",
+    "word": "Fisch",
+    "description": "Ein Fisch schwimmt im Wasser",
+    "image": "/images/animals/fish.svg"
+  },
+  {
+    "id": "animals-bird",
+    "category": "animals",
+    "word": "Vogel",
+    "description": "Ein Vogel fliegt und singt",
+    "image": "/images/animals/bird.svg"
+  },
+  {
+    "id": "animals-horse",
+    "category": "animals",
+    "word": "Pferd",
+    "description": "Ein Pferd ist groß und stark",
+    "image": "/images/animals/horse.svg"
+  },
+  {
+    "id": "animals-frog",
+    "category": "animals",
+    "word": "Frosch",
+    "description": "Ein Frosch springt und quakt",
+    "image": "/images/animals/frog.svg"
+  },
+  {
+    "id": "food-apple",
+    "category": "food",
+    "word": "Apfel",
+    "description": "Eine rote Frucht, die man essen kann",
+    "image": "/images/food/apple.svg"
+  },
+  {
+    "id": "food-banana",
+    "category": "food",
+    "word": "Banane",
+    "description": "Eine lange gelbe Frucht",
+    "image": "/images/food/banana.svg"
+  },
+  {
+    "id": "food-bread",
+    "category": "food",
+    "word": "Brot",
+    "description": "Weiches Essen aus dem Ofen",
+    "image": "/images/food/bread.svg"
+  },
+  {
+    "id": "food-milk",
+    "category": "food",
+    "word": "Milch",
+    "description": "Ein weißes Getränk von der Kuh",
+    "image": "/images/food/milk.svg"
+  },
+  {
+    "id": "food-cheese",
+    "category": "food",
+    "word": "Käse",
+    "description": "Ein gelbes Essen mit Löchern",
+    "image": "/images/food/cheese.svg"
+  },
+  {
+    "id": "food-egg",
+    "category": "food",
+    "word": "Ei",
+    "description": "Ein glattes, ovales Essen",
+    "image": "/images/food/egg.svg"
+  },
+  {
+    "id": "body-eye",
+    "category": "body",
+    "word": "Auge",
+    "description": "Mit deinen Augen siehst du",
+    "image": "/images/body/eye.svg"
+  },
+  {
+    "id": "body-hand",
+    "category": "body",
+    "word": "Hand",
+    "description": "Mit deinen Händen hältst du Dinge",
+    "image": "/images/body/hand.svg"
+  },
+  {
+    "id": "body-ear",
+    "category": "body",
+    "word": "Ohr",
+    "description": "Mit deinen Ohren hörst du",
+    "image": "/images/body/ear.svg"
+  },
+  {
+    "id": "body-mouth",
+    "category": "body",
+    "word": "Mund",
+    "description": "Mit deinem Mund sprichst und isst du",
+    "image": "/images/body/mouth.svg"
+  },
+  {
+    "id": "body-nose",
+    "category": "body",
+    "word": "Nase",
+    "description": "Mit deiner Nase riechst du",
+    "image": "/images/body/nose.svg"
+  },
+  {
+    "id": "body-foot",
+    "category": "body",
+    "word": "Fuß",
+    "description": "Mit deinen Füßen läufst du",
+    "image": "/images/body/foot.svg"
+  },
+  {
+    "id": "emotions-happy",
+    "category": "emotions",
+    "word": "Froh",
+    "description": "Fühlt sich gut an und lächelt",
+    "image": "/images/emotions/happy.svg"
+  },
+  {
+    "id": "emotions-sad",
+    "category": "emotions",
+    "word": "Traurig",
+    "description": "Fühlt sich traurig und möchte weinen",
+    "image": "/images/emotions/sad.svg"
+  },
+  {
+    "id": "emotions-angry",
+    "category": "emotions",
+    "word": "Ärger",
+    "description": "Fühlt sich geärgert",
+    "image": "/images/emotions/angry.svg"
+  },
+  {
+    "id": "emotions-surprised",
+    "category": "emotions",
+    "word": "Überrascht",
+    "description": "Fühlt sich, wenn etwas Neues passiert",
+    "image": "/images/emotions/surprised.svg"
+  },
+  {
+    "id": "emotions-scared",
+    "category": "emotions",
+    "word": "Angst",
+    "description": "Fühlt sich, wenn du Angst hast",
+    "image": "/images/emotions/scared.svg"
+  },
+  {
+    "id": "emotions-sleepy",
+    "category": "emotions",
+    "word": "Müde",
+    "description": "Fühlt sich bereit fürs Bett",
+    "image": "/images/emotions/sleepy.svg"
+  },
+  {
+    "id": "home-bed",
+    "category": "home",
+    "word": "Bett",
+    "description": "Da schläfst du",
+    "image": "/images/home/bed.svg"
+  },
+  {
+    "id": "home-table",
+    "category": "home",
+    "word": "Tisch",
+    "description": "Da isst du",
+    "image": "/images/home/table.svg"
+  },
+  {
+    "id": "home-chair",
+    "category": "home",
+    "word": "Stuhl",
+    "description": "Da sitzt du",
+    "image": "/images/home/chair.svg"
+  },
+  {
+    "id": "home-door",
+    "category": "home",
+    "word": "Tür",
+    "description": "Sie öffnet sich und schließt sich",
+    "image": "/images/home/door.svg"
+  },
+  {
+    "id": "home-window",
+    "category": "home",
+    "word": "Fenster",
+    "description": "Da schaust du hinaus",
+    "image": "/images/home/window.svg"
+  },
+  {
+    "id": "home-lamp",
+    "category": "home",
+    "word": "Lampe",
+    "description": "Eine Lampe macht Licht",
+    "image": "/images/home/lamp.svg"
+  }
+]

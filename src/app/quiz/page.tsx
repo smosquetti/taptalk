@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CategoryId, WordCard } from "@/lib/vocabulary";
-import { CATEGORIES, loadVocabulary, shuffle } from "@/lib/vocabulary";
+import { getCategories, loadVocabulary, shuffle } from "@/lib/vocabulary";
 import { speak, stopSpeaking } from "@/lib/speech";
 import { useSound } from "@/components/SoundContext";
+import { useLanguage } from "@/components/LanguageContext";
 
 type Phase = "ready" | "playing" | "done";
 
@@ -18,6 +19,7 @@ const ROUNDS = 8;
 
 export default function QuizPage() {
   const { on: soundOn } = useSound();
+  const { lang } = useLanguage();
   const [phase, setPhase] = useState<Phase>("ready");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +50,7 @@ export default function QuizPage() {
     setLoading(true);
     setError(null);
     try {
-      const all = await loadVocabulary();
+      const all = await loadVocabulary(lang);
       const source =
         category === "all" ? all : all.filter((c) => c.category === category);
       if (source.length < 4) {
@@ -66,7 +68,9 @@ export default function QuizPage() {
       setPhase("playing");
     } catch (e) {
       setError(
-        e instanceof Error ? e.message : "Could not load vocabulary.json",
+        e instanceof Error
+          ? e.message
+          : `Could not load vocabulary-${lang}.json`,
       );
     } finally {
       setLoading(false);
@@ -77,8 +81,8 @@ export default function QuizPage() {
   useEffect(() => {
     if (phase !== "playing") return;
     const q = questions[round];
-    if (q && soundOn) speak(q.target.word);
-  }, [phase, round, questions, soundOn]);
+    if (q && soundOn) speak(q.target.word, { lang });
+  }, [phase, round, questions, soundOn, lang]);
 
   const question: Question | undefined = questions[round];
 
@@ -88,7 +92,13 @@ export default function QuizPage() {
       if (option.id === question.target.id) {
         setCorrectId(option.id);
         setLocked(true);
-        if (soundOn) speak(`Yes! ${question.target.word}.`);
+        if (soundOn)
+          speak(
+            lang === "de"
+              ? `Ja! ${question.target.word}.`
+              : `Yes! ${question.target.word}.`,
+            { lang },
+          );
         if (!hadMiss) setFirstTryHits((h) => h + 1);
         timerRef.current = setTimeout(() => {
           setCorrectId(null);
@@ -106,11 +116,20 @@ export default function QuizPage() {
       } else {
         setHadMiss(true);
         setWrongId(option.id);
-        if (soundOn) speak(question.target.word);
+        if (soundOn) speak(question.target.word, { lang });
         timerRef.current = setTimeout(() => setWrongId(null), 450);
       }
     },
-    [question, locked, correctId, hadMiss, round, questions.length, soundOn],
+    [
+      question,
+      locked,
+      correctId,
+      hadMiss,
+      round,
+      questions.length,
+      soundOn,
+      lang,
+    ],
   );
 
   if (phase === "ready") {
@@ -134,7 +153,7 @@ export default function QuizPage() {
               Play — all pictures
             </button>
             <div className="mt-2 grid grid-cols-2 gap-2">
-              {CATEGORIES.map((c) => (
+              {getCategories(lang).map((c) => (
                 <button
                   key={c.id}
                   type="button"
@@ -198,7 +217,7 @@ export default function QuizPage() {
         <button
           type="button"
           onClick={() => {
-            if (soundOn && question) speak(question.target.word);
+            if (soundOn && question) speak(question.target.word, { lang });
           }}
           aria-label="Hear the word again"
           className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl shadow transition active:scale-95"

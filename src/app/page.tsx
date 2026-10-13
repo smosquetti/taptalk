@@ -1,37 +1,47 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { CategoryId, WordCard } from "@/lib/vocabulary";
-import { CATEGORIES, loadVocabulary } from "@/lib/vocabulary";
+import type { CategoryId, Language, WordCard } from "@/lib/vocabulary";
+import { getCategories, loadVocabulary } from "@/lib/vocabulary";
 import { speak, stopSpeaking } from "@/lib/speech";
 import Card from "@/components/Card";
 import CategoryBar from "@/components/CategoryBar";
 import DetailOverlay from "@/components/DetailOverlay";
 import { useSound } from "@/components/SoundContext";
+import { useLanguage } from "@/components/LanguageContext";
 
 type BoardState =
   | { status: "loading" }
   | { status: "error"; message: string }
-  | { status: "ready"; cards: WordCard[] };
+  | { status: "ready"; cards: WordCard[]; lang: Language };
 
 export default function BoardPage() {
   const { on: soundOn } = useSound();
+  const { lang } = useLanguage();
   const [state, setState] = useState<BoardState>({ status: "loading" });
   const [category, setCategory] = useState<CategoryId | "all">("all");
   const [selected, setSelected] = useState<WordCard | null>(null);
 
   useEffect(() => {
-    loadVocabulary()
-      .then((cards) => setState({ status: "ready", cards }))
-      .catch(
-        (e) =>
+    let active = true;
+    loadVocabulary(lang)
+      .then((cards) => {
+        if (active) setState({ status: "ready", cards, lang });
+      })
+      .catch((e) => {
+        if (active)
           setState({
             status: "error",
             message:
-              e instanceof Error ? e.message : "Could not load vocabulary.json",
-          }),
-      );
-  }, []);
+              e instanceof Error
+                ? e.message
+                : `Could not load vocabulary-${lang}.json`,
+          });
+      });
+    return () => {
+      active = false;
+    };
+  }, [lang]);
 
   const visible = useMemo(
     () =>
@@ -43,13 +53,20 @@ export default function BoardPage() {
 
   function pick(card: WordCard) {
     setSelected(card);
-    if (soundOn) speak(card.word);
+    if (soundOn) speak(card.word, { lang });
   }
 
   function close() {
     stopSpeaking();
     setSelected(null);
   }
+
+  // The overlay only shows a card from the currently loaded vocabulary,
+  // so switching languages closes a card opened in the other language.
+  const overlayCard =
+    selected && state.status === "ready" && state.lang === lang
+      ? selected
+      : null;
 
   return (
     <div className="flex flex-col gap-4">
@@ -72,7 +89,7 @@ export default function BoardPage() {
             Oh no — {state.message}
           </p>
           <p className="mt-2 text-[#8a7f6f]">
-            Check that <code>public/vocabulary.json</code> is valid JSON.
+            Check that <code>public/vocabulary-{lang}.json</code> is valid JSON.
           </p>
         </div>
       )}
@@ -80,7 +97,7 @@ export default function BoardPage() {
       {state.status === "ready" && (
         <>
           <CategoryBar
-            categories={CATEGORIES}
+            categories={getCategories(lang)}
             active={category}
             onSelect={setCategory}
           />
@@ -92,8 +109,8 @@ export default function BoardPage() {
         </>
       )}
 
-      {selected && (
-        <DetailOverlay card={selected} soundOn={soundOn} onClose={close} />
+      {overlayCard && (
+        <DetailOverlay card={overlayCard} soundOn={soundOn} onClose={close} />
       )}
     </div>
   );

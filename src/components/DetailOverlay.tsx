@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import type { WordCard } from "@/lib/vocabulary";
 import { speak } from "@/lib/speech";
+import { useLanguage } from "@/components/LanguageContext";
 
 type Props = {
   card: WordCard;
@@ -12,6 +13,8 @@ type Props = {
 };
 
 export default function DetailOverlay({ card, soundOn, onClose }: Props) {
+  const { lang } = useLanguage();
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -59,7 +62,7 @@ export default function DetailOverlay({ card, soundOn, onClose }: Props) {
         <button
           type="button"
           onClick={() => {
-            if (soundOn) speak(card.word);
+            if (soundOn) speak(card.word, { lang });
           }}
           className="mt-5 flex w-full items-center justify-center gap-3 rounded-full bg-[#2F6FE4] px-6 py-4 text-xl font-extrabold text-white transition hover:bg-[#2558b8] active:scale-[0.98]"
         >

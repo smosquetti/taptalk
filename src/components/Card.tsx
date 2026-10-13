@@ -18,6 +18,7 @@ export default function Card({ card, onPick }: Props) {
     >
       <Image
         src={card.image}
+        loading="eager"
         alt=""
         fill
         sizes="(max-width: 640px) 50vw, 33vw"

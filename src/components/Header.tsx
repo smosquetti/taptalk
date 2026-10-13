@@ -6,7 +6,6 @@ import { useSound } from "@/components/SoundContext";
 import { useLanguage } from "@/components/LanguageContext";
 import { useState, useEffect } from 'react';
 import { LANGUAGES } from "@/lib/vocabulary";
-import Image from 'next/image'
 
 const NAV = [
   { href: "/", label: "Board" },
@@ -30,13 +29,7 @@ export default function Header() {
           href="/"
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-[#35302A]"
         >
-          <div aria-hidden>
-            <Image 
-              src="/taptalk128.png"
-              alt="Logo"
-              width={32}
-              height={32}/>
-          </div>
+          <img src="/images/taptalk128.png" alt="Logo" width="32" height="32" loading="lazy"/>
           TapTalk
         </Link>
 

@@ -1,0 +1,338 @@
+[
+  {
+    "id": "colors-red",
+    "category": "colors",
+    "word": "Red",
+    "description": "A red circle",
+    "image": "/images/colors/red.svg"
+  },
+  {
+    "id": "colors-blue",
+    "category": "colors",
+    "word": "Blue",
+    "description": "A blue circle",
+    "image": "/images/colors/blue.svg"
+  },
+  {
+    "id": "colors-yellow",
+    "category": "colors",
+    "word": "Yellow",
+    "description": "A yellow circle",
+    "image": "/images/colors/yellow.svg"
+  },
+  {
+    "id": "colors-green",
+    "category": "colors",
+    "word": "Green",
+    "description": "A green circle",
+    "image": "/images/colors/green.svg"
+  },
+  {
+    "id": "colors-orange",
+    "category": "colors",
+    "word": "Orange",
+    "description": "An orange circle",
+    "image": "/images/colors/orange.svg"
+  },
+  {
+    "id": "colors-purple",
+    "category": "colors",
+    "word": "Purple",
+    "description": "A purple circle",
+    "image": "/images/colors/purple.svg"
+  },
+  {
+    "id": "shapes-circle",
+    "category": "shapes",
+    "word": "Circle",
+    "description": "A round shape",
+    "image": "/images/shapes/circle.svg"
+  },
+  {
+    "id": "shapes-square",
+    "category": "shapes",
+    "word": "Square",
+    "description": "A shape with four equal sides",
+    "image": "/images/shapes/square.svg"
+  },
+  {
+    "id": "shapes-triangle",
+    "category": "shapes",
+    "word": "Triangle",
+    "description": "A shape with three sides",
+    "image": "/images/shapes/triangle.svg"
+  },
+  {
+    "id": "shapes-star",
+    "category": "shapes",
+    "word": "Star",
+    "description": "A shape with five points",
+    "image": "/images/shapes/star.svg"
+  },
+  {
+    "id": "shapes-heart",
+    "category": "shapes",
+    "word": "Heart",
+    "description": "The shape we love",
+    "image": "/images/shapes/heart.svg"
+  },
+  {
+    "id": "shapes-diamond",
+    "category": "shapes",
+    "word": "Diamond",
+    "description": "A slanted square shape",
+    "image": "/images/shapes/diamond.svg"
+  },
+  {
+    "id": "numbers-one",
+    "category": "numbers",
+    "word": "One",
+    "description": "The number 1",
+    "image": "/images/numbers/one.svg"
+  },
+  {
+    "id": "numbers-two",
+    "category": "numbers",
+    "word": "Two",
+    "description": "The number 2",
+    "image": "/images/numbers/two.svg"
+  },
+  {
+    "id": "numbers-three",
+    "category": "numbers",
+    "word": "Three",
+    "description": "The number 3",
+    "image": "/images/numbers/three.svg"
+  },
+  {
+    "id": "numbers-four",
+    "category": "numbers",
+    "word": "Four",
+    "description": "The number 4",
+    "image": "/images/numbers/four.svg"
+  },
+  {
+    "id": "numbers-five",
+    "category": "numbers",
+    "word": "Five",
+    "description": "The number 5",
+    "image": "/images/numbers/five.svg"
+  },
+  {
+    "id": "numbers-six",
+    "category": "numbers",
+    "word": "Six",
+    "description": "The number 6",
+    "image": "/images/numbers/six.svg"
+  },
+  {
+    "id": "animals-dog",
+    "category": "animals",
+    "word": "Dog",
+    "description": "A dog says: Woof!",
+    "image": "/images/animals/dog.svg"
+  },
+  {
+    "id": "animals-cat",
+    "category": "animals",
+    "word": "Cat",
+    "description": "A cat says: Meow!",
+    "image": "/images/animals/cat.svg"
+  },
+  {
+    "id": "animals-fish",
+    "category": "animals",
+    "word": "Fish",
+    "description": "A fish swims in the water",
+    "image": "/images/animals/fish.svg"
+  },
+  {
+    "id": "animals-bird",
+    "category": "animals",
+    "word": "Bird",
+    "description": "A bird flies and sings",
+    "image": "/images/animals/bird.svg"
+  },
+  {
+    "id": "animals-horse",
+    "category": "animals",
+    "word": "Horse",
+    "description": "A horse is tall and strong",
+    "image": "/images/animals/horse.svg"
+  },
+  {
+    "id": "animals-frog",
+    "category": "animals",
+    "word": "Frog",
+    "description": "A frog jumps and croaks",
+    "image": "/images/animals/frog.svg"
+  },
+  {
+    "id": "food-apple",
+    "category": "food",
+    "word": "Apple",
+    "description": "A red fruit you can eat",
+    "image": "/images/food/apple.svg"
+  },
+  {
+    "id": "food-banana",
+    "category": "food",
+    "word": "Banana",
+    "description": "A long yellow fruit",
+    "image": "/images/food/banana.svg"
+  },
+  {
+    "id": "food-bread",
+    "category": "food",
+    "word": "Bread",
+    "description": "Soft food from the oven",
+    "image": "/images/food/bread.svg"
+  },
+  {
+    "id": "food-milk",
+    "category": "food",
+    "word": "Milk",
+    "description": "White drink from the cow",
+    "image": "/images/food/milk.svg"
+  },
+  {
+    "id": "food-cheese",
+    "category": "food",
+    "word": "Cheese",
+    "description": "A yellow food with holes",
+    "image": "/images/food/cheese.svg"
+  },
+  {
+    "id": "food-egg",
+    "category": "food",
+    "word": "Egg",
+    "description": "A smooth oval food",
+    "image": "/images/food/egg.svg"
+  },
+  {
+    "id": "body-eye",
+    "category": "body",
+    "word": "Eye",
+    "description": "You see with your eyes",
+    "image": "/images/body/eye.svg"
+  },
+  {
+    "id": "body-hand",
+    "category": "body",
+    "word": "Hand",
+    "description": "You hold things with your hands",
+    "image": "/images/body/hand.svg"
+  },
+  {
+    "id": "body-ear",
+    "category": "body",
+    "word": "Ear",
+    "description": "You hear with your ears",
+    "image": "/images/body/ear.svg"
+  },
+  {
+    "id": "body-mouth",
+    "category": "body",
+    "word": "Mouth",
+    "description": "You talk and eat with your mouth",
+    "image": "/images/body/mouth.svg"
+  },
+  {
+    "id": "body-nose",
+    "category": "body",
+    "word": "Nose",
+    "description": "You smell with your nose",
+    "image": "/images/body/nose.svg"
+  },
+  {
+    "id": "body-foot",
+    "category": "body",
+    "word": "Foot",
+    "description": "You walk on your feet",
+    "image": "/images/body/foot.svg"
+  },
+  {
+    "id": "emotions-happy",
+    "category": "emotions",
+    "word": "Happy",
+    "description": "Feeling glad and smiling",
+    "image": "/images/emotions/happy.svg"
+  },
+  {
+    "id": "emotions-sad",
+    "category": "emotions",
+    "word": "Sad",
+    "description": "Feeling like crying",
+    "image": "/images/emotions/sad.svg"
+  },
+  {
+    "id": "emotions-angry",
+    "category": "emotions",
+    "word": "Angry",
+    "description": "Feeling cross or mad",
+    "image": "/images/emotions/angry.svg"
+  },
+  {
+    "id": "emotions-surprised",
+    "category": "emotions",
+    "word": "Surprised",
+    "description": "Feeling when something is new",
+    "image": "/images/emotions/surprised.svg"
+  },
+  {
+    "id": "emotions-scared",
+    "category": "emotions",
+    "word": "Scared",
+    "description": "Feeling when you are afraid",
+    "image": "/images/emotions/scared.svg"
+  },
+  {
+    "id": "emotions-sleepy",
+    "category": "emotions",
+    "word": "Sleepy",
+    "description": "Feeling ready for bed",
+    "image": "/images/emotions/sleepy.svg"
+  },
+  {
+    "id": "home-bed",
+    "category": "home",
+    "word": "Bed",
+    "description": "You sleep in a bed",
+    "image": "/images/home/bed.svg"
+  },
+  {
+    "id": "home-table",
+    "category": "home",
+    "word": "Table",
+    "description": "You eat at a table",
+    "image": "/images/home/table.svg"
+  },
+  {
+    "id": "home-chair",
+    "category": "home",
+    "word": "Chair",
+    "description": "You sit on a chair",
+    "image": "/images/home/chair.svg"
+  },
+  {
+    "id": "home-door",
+    "category": "home",
+    "word": "Door",
+    "description": "It opens and it closes",
+    "image": "/images/home/door.svg"
+  },
+  {
+    "id": "home-window",
+    "category": "home",
+    "word": "Window",
+    "description": "You look out of a window",
+    "image": "/images/home/window.svg"
+  },
+  {
+    "id": "home-lamp",
+    "category": "home",
+    "word": "Lamp",
+    "description": "A lamp gives light",
+    "image": "/images/home/lamp.svg"
+  }
+]

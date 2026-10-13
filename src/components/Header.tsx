@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSound } from "@/components/SoundContext";
 import { useLanguage } from "@/components/LanguageContext";
+import { useState, useEffect } from 'react';
 import { LANGUAGES } from "@/lib/vocabulary";
 import Image from 'next/image'
 
@@ -16,6 +17,11 @@ export default function Header() {
   const pathname = usePathname();
   const { on, toggle } = useSound();
   const { lang, setLang } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-30 border-b-4 border-[#E5DCC8] bg-[#FDF8EF]/95 backdrop-blur">
@@ -62,23 +68,27 @@ export default function Header() {
             role="group"
             aria-label="Language"
           >
-            {LANGUAGES.map((l) => (
-              <button
-                key={l.id}
-                type="button"
-                onClick={() => setLang(l.id)}
-                aria-pressed={lang === l.id}
-                aria-label={`Learn in ${l.label}`}
-                className={`flex h-11 items-center gap-1 rounded-full px-4 text-base font-bold transition ${
-                  lang === l.id
-                    ? "bg-[#35302A] text-[#FDF8EF]"
-                    : "bg-[#E5DCC8]/60 text-[#35302A] hover:bg-[#E5DCC8]"
-                }`}
-              >
-                <span aria-hidden>{l.flag}</span>
-                {l.id.toUpperCase()}
-              </button>
-            ))}
+            {LANGUAGES.map((l) => {
+              const isActive = mounted ? lang === l.id : false;
+
+              return (
+                <button
+                  key={l.id}
+                  type="button"
+                  onClick={() => setLang(l.id)}
+                  aria-pressed={isActive}
+                  aria-label={`Learn in ${l.label}`}
+                  className={`flex h-11 items-center gap-1 rounded-full px-4 text-base font-bold transition ${
+                    isActive
+                      ? "bg-[#35302A] text-[#FDF8EF]"
+                      : "bg-[#E5DCC8]/60 text-[#35302A] hover:bg-[#E5DCC8]"
+                  }`}
+                >
+                  <span aria-hidden>{l.flag}</span>
+                  {l.id.toUpperCase()}
+                </button>
+              );
+            })}
           </div>
 
           <button

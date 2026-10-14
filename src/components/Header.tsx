@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useSound } from "@/components/SoundContext";
 import { useLanguage } from "@/components/LanguageContext";
 import { useState, useEffect } from 'react';
-import { LANGUAGES } from "@/lib/vocabulary";
+import { LANGUAGES, type Language } from "@/lib/vocabulary";
 
 const NAV = [
   { href: "/", label: "Board" },
@@ -30,7 +30,7 @@ export default function Header() {
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-[#35302A]"
         >
           <img src="/images/taptalk128.png" alt="Logo" width="32" height="32" loading="lazy"/>
-          TapTalk
+          <span className="hidden sm:inline">TapTalk</span>
         </Link>
 
         <nav
@@ -45,7 +45,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-4 py-2 text-base font-bold transition ${
+                className={`rounded-full px-3 py-2 text-base font-bold transition sm:px-4 ${
                   active
                     ? "bg-[#35302A] text-[#FDF8EF]"
                     : "text-[#35302A] hover:bg-[#EFE6D4]"
@@ -56,33 +56,18 @@ export default function Header() {
             );
           })}
 
-          <div
-            className="ml-1 flex items-center gap-1"
-            role="group"
-            aria-label="Language"
+          <select
+            value={mounted ? lang : undefined}
+            onChange={(event) => setLang(event.target.value as Language)}
+            aria-label="Choose language"
+            className="h-11 cursor-pointer rounded-full border-2 border-[#E5DCC8] bg-white px-3 text-base font-bold text-[#35302A] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#35302A]"
           >
-            {LANGUAGES.map((l) => {
-              const isActive = mounted ? lang === l.id : false;
-
-              return (
-                <button
-                  key={l.id}
-                  type="button"
-                  onClick={() => setLang(l.id)}
-                  aria-pressed={isActive}
-                  aria-label={`Learn in ${l.label}`}
-                  className={`flex h-11 items-center gap-1 rounded-full px-4 text-base font-bold transition ${
-                    isActive
-                      ? "bg-[#35302A] text-[#FDF8EF]"
-                      : "bg-[#E5DCC8]/60 text-[#35302A] hover:bg-[#E5DCC8]"
-                  }`}
-                >
-                  <span aria-hidden>{l.flag}</span>
-                  {l.id.toUpperCase()}
-                </button>
-              );
-            })}
-          </div>
+            {LANGUAGES.map((l) => (
+              <option key={l.id} value={l.id}>
+                <span aria-hidden>{l.flag}</span> {l.id.toUpperCase()}
+              </option>
+            ))}
+          </select>
 
           <button
             type="button"
